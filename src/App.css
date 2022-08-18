@@ -1,38 +1,354 @@
 .App {
   text-align: center;
+  background-color: #dcd7c9;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.containerHeader {
+  font-family: "Oswald", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.mainContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+  font-family: "Oswald", sans-serif;
+}
+
+.mainHeading {
+  font-size: 5vw;
+}
+
+.incomeInputDiv {
+  font-size: 2vw;
+  background-color: #a27b5c;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 8px;
+}
+
+.incomeInputDiv input {
+  width: 40%;
+}
+
+.incomeInputDiv button {
+  font-size: 2vw;
+}
+
+.expenseInputDiv {
+  font-size: 2vw;
+}
+
+.expenseInputDiv input {
+  width: 30%;
+}
+
+.expenseInputDiv button {
+  font-size: 2vw;
+  width: 10%;
+}
+
+.expensesDiv {
+  width: 50%;
+}
+
+/* .expensesDiv table
+{
+  width: 50%;
+} */
+
+.expensesDiv input {
+  width: 50%;
+  font-size: 1.8vw;
+}
+
+.balanceDisplay {
+  width: 50%;
+  text-align: center;
+}
+
+.balanceDisplay h3 {
+  width: 80%;
+  margin: auto;
+  font-size: 2.5vw;
+  background-color: #212529;
   color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.balanceDisplay table {
+  width: 80%;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  font-size: 1.8vw;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.balanceDisplay input {
+  width: 80%;
+}
+
+.expensetable {
+  width: 100%;
+  font-size: 2vw;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  /* border: 1px solid black; */
+}
+
+.expensetable th {
+  border: 2px solid #212529;
+  background-color: #212529;
+  color: white;
+  font-size: 2vw;
+}
+
+.editDiv {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  background-color: white;
+  padding: 5%;
+    font-size: 2vw;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  /* transform: ; */
+  font-family: "Oswald", sans-serif;
+}
+
+.editDiv table 
+{
+  width: 100%;
+}
+
+.editDiv input 
+{
+  width: 100%;
+}
+
+.editActionBtn
+{
+  text-align: end;
+}
+
+.editDiv h5 
+{
+  font-size: 3vw;
+}
+
+@keyframes openAnimation {
+  0% {
+    opacity: 0;
+    /* width: 90%; */
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    /* width: 100%; */
+  }
+}
+
+.expenseRow {
+  animation: moveAnimation 0.5s forwards;
+}
+
+@keyframes moveAnimation {
+  0% {
+    opacity: 0;
+    /* width: 10%; */
+    /* bottom: 0%; */
+    /* transform: translateY(startYposition); */
+    /* position: absolute;
+      bottom: 0px; */
+    transform: translateY(100%);
+    transition: 0.1s ease-in-out;
+  }
+  100% {
+    opacity: 1;
+    /* width: 100% */
+    /* bottom: 100%; */
+    /* transform: translateY(endYposition); */
+    /* position: relative; */
+    /* bottom: auto; */
+    transform: translateY(0);
+  }
+}
+
+.groceriesDiv h3 {
+  font-size: 2.5vw;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.veggiesDiv h3 {
+  font-size: 2.5vw;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.travellingDiv h3 {
+  font-size: 2.5vw;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.miscDiv h3 {
+  font-size: 2.5vw;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.totalDiv {
+  padding: 3% 0%;
+  background-color: #212529;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.totalDiv span {
+  font-size: 2vw;
+}
+
+.chartDiv
+{
+  width: 80%;
+  margin: auto;
+  display: none;
+}
+
+.hiddenTotal
+{
+  visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 576px) {
+  .mainContainer {
+    display: flex;
+    justify-content: space-around;
+    font-family: "Oswald", sans-serif;
+  }
+
+  .incomeInputDiv {
+    font-size: 3.5vw;
+    background-color: #a27b5c;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 8px;
+  }
+
+  .incomeInputDiv button {
+    font-size: 3vw;
+  }
+
+  .expenseInputDiv {
+    font-size: 3.5vw;
+  }
+
+  .expenseInputDiv button {
+    width: 80%;
+    font-size: 4vw;
+  }
+
+  .expensesDiv button {
+    font-size: 2vw;
+  }
+
+  .expensesDiv table {
+    font-size: 3vw;
+  }
+
+  .expensesDiv h3 
+  {
+    font-size: 4vw;
+  }
+
+  .expensesDiv th 
+  {
+    font-size: 3vw;
+  }
+
+  .editDiv {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 15%;
+    width: 70%;
+    padding: 10%;
+    font-size: 4vw;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    /* transform: ; */
+  }
+  
+  .editDiv h5 
+  {
+    font-size: 4vw;
+  }
+
+  .editDiv input 
+  {
+    width: 80%;
+  }
+
+  .editDiv button 
+  {
+    font-size: 3vw;
+  }
+
+  .balanceDisplay h3 
+  {
+    font-size: 4vw;
+  }
+
+  .balanceDisplay table 
+  {
+    font-size: 3vw;
+  }
+
+ 
+
+  .totalDiv {
+    padding: 0% 0% 5% 0%;
+    
+  }
+
+  .totalDiv span 
+  {
+    font-size: 3vw;
+  }
+
+  .totalDiv input 
+  {
+    font-size: 2.5vw;
   }
 }
